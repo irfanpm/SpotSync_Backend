@@ -9,7 +9,7 @@ require("dotenv").config();
 
 api.use(express.json())
 
-mongoose.connect('mongodb://localhost/spotsync')
+mongoose.connect(process.env.MONGO_URL)
 api.use(cors())
 api.use('/api',userRoute,serviceRouter,adminRouter)
 api.listen(8000,()=>{
