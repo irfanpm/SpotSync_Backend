@@ -12,6 +12,6 @@ api.use(express.json())
 mongoose.connect(process.env.MONGO_URL)
 api.use(cors())
 api.use('/api',userRoute,serviceRouter,adminRouter)
-api.listen(8000,()=>{
+api.listen(process.env.PORT,()=>{
     console.log('http://127.0.0.1:8000');
 })
